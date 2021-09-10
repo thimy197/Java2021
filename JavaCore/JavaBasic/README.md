@@ -100,4 +100,3 @@ Integer → Int: int numInt1 = numInteger.intValue();
 
 ####Thứ tự ép kiểu nới rộng(widening): ko mất dữ liệu
 ``byte -> short -> int -> long -> float -> double``
-
