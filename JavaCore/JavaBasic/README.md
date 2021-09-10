@@ -8,15 +8,15 @@
 	- Đa nhiệm (multi-threaded)<br>
 	<br>
 2. Ứng dụng:<br>
-		![Application](./images/Application.png)<br>
+		![Application](./images/Application.PNG)<br>
 	- Java SE(Java System Edition): application, mạng, giao diện control<br>
 	- Java EE(Java Enterprise Edition): web<br>
 	- Java ME(Java Mobile Edition): game, app mobile
 	<br><br>
 3. Thành phần:<br>
 	- JVM(Java virtual machine): môi trường thực thi mã Java Bytecode<br>
-		![Compile](./images/JVM_compile.png)
-		![Runtime](./images/JVM_runtime.png)<br>
+		![Compile](./images/JVM_compile.PNG)
+		![Runtime](./images/JVM_runtime.PNG)<br>
 	<br>
 	- JRE(Java runtime environment): JVM + Libs<br>
 	- JDK(Java development kit): JRE + development tools<br>
