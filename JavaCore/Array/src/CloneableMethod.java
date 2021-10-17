@@ -76,24 +76,24 @@ public class CloneableMethod {
 		t3.b = 20;
 		t3.test.x = 30;
 		t3.test.y = 40;
- 
-        Test3 t3Clone = (Test3)t3.clone();
-        t3Clone.a = 100;
- 
-        // Change in primitive type of t2 will
-        // not be reflected in t1 field
-        t3Clone.test.x = 300;
- 
-        // Change in object type field of t2 will
-        // not be reflected in t1(deep copy)
-        System.out.println(t3.toString());
-        System.out.println(t3Clone.toString());
-        
-        // chúng khác bộ nhớ ở Test3, nhưng chung bộ nhớ ở Test3Clone
- 		System.out.println(t3.hashCode());
- 		System.out.println(t3Clone.hashCode());
- 		System.out.println(t3.test.hashCode());
- 		System.out.println(t3Clone.test.hashCode());
+
+		Test3 t3Clone = (Test3)t3.clone();
+		t3Clone.a = 100;
+
+		// Change in primitive type of t2 will
+		// not be reflected in t1 field
+		t3Clone.test.x = 300;
+
+		// Change in object type field of t2 will
+		// not be reflected in t1(deep copy)
+		System.out.println(t3.toString());
+		System.out.println(t3Clone.toString());
+
+		// chúng khác bộ nhớ ở Test3, nhưng chung bộ nhớ ở Test3Clone
+		System.out.println(t3.hashCode());
+		System.out.println(t3Clone.hashCode());
+		System.out.println(t3.test.hashCode());
+		System.out.println(t3Clone.test.hashCode());
 	}
 
 }
@@ -106,7 +106,7 @@ class Test{
 		x = 10;
 		y = 20;
 	}
-	
+
 	@Override
 	public String toString() {
 		return x+" "+y;
@@ -124,7 +124,7 @@ class Test2 implements Cloneable {
 	protected Object clone() throws CloneNotSupportedException {
 		return super.clone();
 	}
-	
+
 	@Override
 	public String toString() {
 		return a+" "+b+" "+test.toString();
