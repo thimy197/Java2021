@@ -1,5 +1,6 @@
+package cloneable;
 
-public class CloneableMethod {
+public class CloneMethod {
 
 	// throws for test2 and test3
 	public static void main(String[] args) throws CloneNotSupportedException{

@@ -1,3 +1,4 @@
+package cloneable;
 
 public class CloneableTest {
 
