@@ -8,25 +8,45 @@ import java.io.*;
 public class SerializableTest {
 
 	public static void main(String[] args)
-			throws IOException, ClassNotFoundException
 	{
 		A a = new A(25, "My");
 
-		// Serializing 'a'
-		FileOutputStream fos = new FileOutputStream("files/xyz.txt");
-		ObjectOutputStream oos = new ObjectOutputStream(fos);
-		oos.writeObject(a);
+		try {
+			/* Serializing 'a' */		
+			// Saving of object in a file
+			File file = new File("files/xyz.txt");
+			if(!file.exists()) {
+				file.createNewFile();
+			}
+			FileOutputStream fos = new FileOutputStream(file);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			// Method for serialization of object
+			oos.writeObject(a);
+			// closing streams
+			oos.close();
+			fos.close();
+			System.out.println("Object has been serialized");
 
-		// De-serializing 'a'
-		FileInputStream fis = new FileInputStream("files/xyz.txt");
-		ObjectInputStream ois = new ObjectInputStream(fis);
-		A b = (A)ois.readObject();//down-casting object
+			/* De-serializing 'a' */
+			// Reading the object from a file
+			FileInputStream fis = new FileInputStream(file);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			// Method for deserialization of object
+			A b = (A)ois.readObject();//down-casting object
+			// closing streams
+			ois.close();
+			fis.close();
+			System.out.println("Object has been deserialized ");
 
-		System.out.println(b.toString());
+			System.out.println(b.toString());
 
-		// closing streams
-		oos.close();
-		ois.close();
+		}catch(IOException ex){
+			System.out.println("IOException is caught");
+		}
+		catch(ClassNotFoundException ex){ // of readObject()
+			System.out.println("ClassNotFoundException is caught");
+		}
+
 	}
 
 }
@@ -44,7 +64,7 @@ class A implements Serializable
 		this.i = i;
 		this.s = s;
 	}
-	
+
 	@Override
 	public String toString() {
 		return i+" "+s;
