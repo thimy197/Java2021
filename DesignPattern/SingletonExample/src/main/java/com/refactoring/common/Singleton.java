@@ -10,27 +10,27 @@ import java.util.Objects;
  *
  */
 public final class Singleton {
-	
+
 	private static Singleton singleton;
 	private String value;
-	
+
 	private Singleton(String value) {
 		// mô phỏng làm chậm thời gian khởi tạo
 		try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
+			Thread.sleep(1000);
+		} catch (InterruptedException ex) {
+			ex.printStackTrace();
+		}
 		this.value = value;
 	}
-	
+
 	public static Singleton getSingleton(String value) {
 		if(Objects.isNull(singleton)) {
 			singleton = new Singleton(value);
 		}
 		return singleton;
 	}
-	
+
 	public String getValue() {
 		return this.value;
 	}
