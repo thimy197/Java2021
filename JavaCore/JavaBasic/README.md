@@ -80,10 +80,12 @@ sử dụng ở: classes, variables, methods and constructors<br>
 ![Wrapper classes](./images/Wrapper.PNG)<br>
 
 ```
+//autoBoxing
 int → Integer: Integer numInteger = Integer.valueOf(numInt);
-		Integer numInteger1 = numInteger; //autoBoxing
+		Integer numInteger1 = numInteger; 
+//unBoxing
 Integer → Int: int numInt1 = numInteger.intValue();
-		int numInt2 = numInteger1; //unBoxing
+		int numInt2 = numInteger1; 
 ```
 
 #### Tại sao lại sử dụng Wrapper:
@@ -95,8 +97,27 @@ Integer → Int: int numInt1 = numInteger.intValue();
 #### Hạn chế:
 - Primitive thì nhanh hơn Wapper
 - Phép toán so sánh == sẽ không chính xác:<br>
-		== so sánh tham chiếu (reference or address)<br>
-		.equal() so sánh tham trị (value)
+		`== so sánh tham chiếu (reference or address)`<br>
+		`.equal() so sánh tham trị (value)`
 
 #### Thứ tự ép kiểu nới rộng(widening): ko mất dữ liệu
 ``byte -> short -> int -> long -> float -> double``
+
+## 8. Abstract vs Interface
+Khi nào sử dụng:<br>
+- Interface thường được dùng để mô tả một tập các chức năng. Một class thừa kế một interface A, ta nói rằng class đó có thể thực hiện các năng của interface A khai báo, mà chưa cần xem code.
+- Abstract class thường được dùng trong mối quan hệ thừa kế, vì tính linh hoạt của nó có thể chứa abstract method và method thông thường. Dựa vào đó mà chúng ta có thể định nghĩa các khuôn mẫu hay triển khai những thuộc tính, method mà các class con có thể dùng chung.
+<br>
+
+Sự khác nhau:
+- Chỉ extends 1 class/abstract-class nhưng có thể implement nhiều interface
+- Methods:
+Interface: **public abstract method**
+Abstract-class: chứa **protected/public abstract method** và cả **method thông thường**
+- Variables:
+Interface: **public static final ...**
+Abstract-class: **static, final hoặc static final biến**
+
+
+
+
