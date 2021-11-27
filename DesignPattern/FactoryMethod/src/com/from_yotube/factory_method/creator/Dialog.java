@@ -9,9 +9,9 @@ import com.from_yotube.factory_method.product.ButtonProduct;
 public abstract class Dialog {
 
 	// The creator may also provide some default implementation
-    // of the factory method.
+	// of the factory method.
 	public abstract ButtonProduct createButton();
-	
+
 	// Lưu ý rằng, mặc dù có tên như vậy nhưng trách nhiệm chính của 
 	// creator không phải là tạo ra product. Nó thường chứa một số 
 	// logic business cốt lõi dựa trên các đối tượng sản phẩm được trả về 
@@ -25,5 +25,5 @@ public abstract class Dialog {
 		button.onClick();
 		button.render();
 	}
-	
+
 }
