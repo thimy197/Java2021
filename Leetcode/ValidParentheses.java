@@ -1,4 +1,3 @@
-package com.alibou.aws.test;
 
 import java.util.Stack;
 

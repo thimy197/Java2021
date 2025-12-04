@@ -1,4 +1,3 @@
-package com.alibou.aws.test;
 
 public class RemoveElement {
 

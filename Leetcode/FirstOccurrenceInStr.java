@@ -1,4 +1,3 @@
-package com.alibou.aws.test;
 
 public class FirstOccurrenceInStr {
     public static void main(String[] args) {
